@@ -24,7 +24,6 @@ $(document).ready(function() {
 				url:queryURL,
 				method:'GET'
 			}).done(function(response){
-				console.log(response);
 				for(var j=0; j<response.data.length; j++){
 					$("#dogGIFS").append("Rating: "+response.data[j].rating+"<br>");
 					$("#dogGIFS").append("<img src='"+response.data[j].images.original_still.url+"' style='width:300px;height:300px;''><br>");
@@ -41,7 +40,6 @@ $(document).ready(function() {
 
 
 	function controlGif() {
-		console.log(this);
 		var stillGif = this.src;
 		var loopingGif = stillGif.replace('_s', '');
 		
@@ -53,8 +51,6 @@ $(document).ready(function() {
 			this.src = loopingGif.replace(".gif", '_s.gif');
 			gifRunning = false;
 		};
-		console.log(stillGif);
-		console.log(loopingGif);
 
 	};
 
